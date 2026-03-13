@@ -10,9 +10,9 @@ public class SelectionTaskMeasure : MonoBehaviour
     public GameObject objectTPrefab;
     Vector3 objectTStartingPos;
 
-    public GameObject taskStartPanel;
-    public GameObject donePanel;
-    public TMP_Text startPanelText;
+    public GameObject task1StartPanel, task2StartPanel, task3StartPanel;
+    public GameObject task1DonePanel, task2DonePanel, task3DonePanel;
+    public TMP_Text startPanel1Text, startPanel2Text, startPanel3Text;
     public TMP_Text scoreText;
     public int completeCount;
     public bool isTaskStart;
@@ -20,12 +20,15 @@ public class SelectionTaskMeasure : MonoBehaviour
     public bool isCountdown;
     public Vector3 manipulationError;
     public float taskTime;
-    public GameObject taskUI;
+    public GameObject task1UI, task2UI, task3UI;
     public ParkourCounter parkourCounter;
     public DataRecording dataRecording;
-    private int part;
+    public int part;
     public float partSumTime;
     public float partSumErr;
+
+    private TMP_Text startPanelText;
+    private GameObject taskUI, taskStartPanel, donePanel;
 
 
     // Start is called before the first frame update
@@ -34,9 +37,14 @@ public class SelectionTaskMeasure : MonoBehaviour
         parkourCounter = GetComponent<ParkourCounter>();
         dataRecording = GetComponent<DataRecording>();
         part = 1;
-        donePanel.SetActive(false);
         scoreText.text = "Part" + part.ToString();
-        taskStartPanel.SetActive(false);
+        task1DonePanel.SetActive(false);
+        task2DonePanel.SetActive(false);
+        task3DonePanel.SetActive(false);
+        task1StartPanel.SetActive(false);
+        task2StartPanel.SetActive(false);
+        task3StartPanel.SetActive(false);
+        UpdateCurrentTarget();
     }
 
     // Update is called once per frame
@@ -55,25 +63,83 @@ public class SelectionTaskMeasure : MonoBehaviour
         }
     }
 
+    public void ShowStartPanel()
+    {
+        taskStartPanel.SetActive(true);
+        Debug.Log("ShowStartPanel()");
+    }
+
+    private void UpdateCurrentTarget()
+    {
+        if (part == 1)
+        {
+            taskUI = task1UI;
+            startPanelText = startPanel1Text;
+            taskStartPanel = task1StartPanel;
+            donePanel = task1DonePanel;
+        }
+        else if (part == 2)
+        {
+            taskUI = task2UI;
+            startPanelText = startPanel2Text;
+            taskStartPanel = task2StartPanel;
+            donePanel = task2DonePanel;
+        }
+        else
+        {
+            taskUI = task3UI;
+            startPanelText = startPanel3Text;
+            taskStartPanel = task3StartPanel;
+            donePanel = task3DonePanel;
+        }
+        Debug.Log("taskPart = " + part.ToString());
+    }
+
     public void StartOneTask()
     {
+        UpdateCurrentTarget();
+
         taskTime = 0f;
         taskStartPanel.SetActive(false);
         donePanel.SetActive(true);
         objectTStartingPos = taskUI.transform.position + taskUI.transform.forward * 0.5f + taskUI.transform.up * 0.75f;
         targetTStartingPos = taskUI.transform.position + taskUI.transform.forward * 0.75f + taskUI.transform.up * 1.2f;
-        objectT = Instantiate(objectTPrefab, objectTStartingPos, new Quaternion(Random.Range(0.0f, 1.0f), Random.Range(0.0f, 1.0f), Random.Range(0.0f, 1.0f), Random.Range(0.0f, 1.0f)));
-        targetT = Instantiate(targetTPrefab, targetTStartingPos, new Quaternion(Random.Range(0.0f, 1.0f), Random.Range(0.0f, 1.0f), Random.Range(0.0f, 1.0f), Random.Range(0.0f, 1.0f)));
+        objectT = Instantiate
+        (
+            objectTPrefab,
+            objectTStartingPos,
+            new Quaternion
+            (
+                Random.Range(0.0f, 1.0f),
+                Random.Range(0.0f, 1.0f),
+                Random.Range(0.0f, 1.0f),
+                Random.Range(0.0f, 1.0f)
+            ),
+            taskUI.transform
+        );
+        targetT = Instantiate
+        (
+            targetTPrefab,
+            targetTStartingPos,
+            new Quaternion
+            (
+                Random.Range(0.0f, 1.0f),
+                Random.Range(0.0f, 1.0f),
+                Random.Range(0.0f, 1.0f),
+                Random.Range(0.0f, 1.0f)
+            ),
+            taskUI.transform
+        );
     }
 
     public void EndOneTask()
     {
         donePanel.SetActive(false);
-        
+
         // release
         isTaskEnd = true;
         isTaskStart = false;
-        
+
         // distance error
         manipulationError = Vector3.zero;
         for (int i = 0; i < targetT.transform.childCount; i++)
@@ -104,6 +170,7 @@ public class SelectionTaskMeasure : MonoBehaviour
             scoreText.text = "Done Part" + part.ToString();
             part += 1;
             completeCount = 0;
+            UpdateCurrentTarget();
         }
         else
         {
