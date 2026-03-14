@@ -78,13 +78,13 @@ jobs:
           restore-keys: hugo-
       - name: Build the site
         run: |
+          cd ./blog
           hugo build \
             --gc \
             --minify \
             --baseURL "${{ steps.pages.outputs.base_url }}/" \
-            --cacheDir "${{ runner.temp }}/hugo_cache"
-        with:
-          path: ./blog
+            --cacheDir "${{ runner.temp }}/hugo_cache" \
+          cd ..
       - name: Cache save
         id: cache-save
         uses: actions/cache/save@v5
