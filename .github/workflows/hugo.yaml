@@ -75,8 +75,7 @@ jobs:
         with:
           path: ${{ runner.temp }}/hugo_cache
           key: hugo-${{ github.run_id }}
-          restore-keys:
-            hugo-
+          restore-keys: hugo-
       - name: Build the site
         run: |
           hugo build \
@@ -85,7 +84,7 @@ jobs:
             --baseURL "${{ steps.pages.outputs.base_url }}/" \
             --cacheDir "${{ runner.temp }}/hugo_cache"
         with:
-          path: "./blog"
+          path: ./blog
       - name: Cache save
         id: cache-save
         uses: actions/cache/save@v5
