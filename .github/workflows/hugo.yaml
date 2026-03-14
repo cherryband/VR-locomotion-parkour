@@ -84,6 +84,8 @@ jobs:
             --minify \
             --baseURL "${{ steps.pages.outputs.base_url }}/" \
             --cacheDir "${{ runner.temp }}/hugo_cache"
+        with:
+          path: "./blog"
       - name: Cache save
         id: cache-save
         uses: actions/cache/save@v5
@@ -93,7 +95,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./public
+          path: ./blog/public
   deploy:
     environment:
       name: github-pages
