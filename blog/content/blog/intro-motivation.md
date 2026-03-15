@@ -17,7 +17,7 @@ The project was done in Unity environment with Meta VR SDK (formerly Oculus VR),
 
 Although I was at first sceptical I would complete the class successfully due to unfamiliarity of the problem domain and relative lack of ideas compared to peers, the structure of the course has given me enough guidance and assurance.
 
-I was encouraged to seek out _real life examples_ to draw inspirations from, including apps and games on the supplied headset. A lot of creative freedom was given to students. Among the ideas discussed (and later actually implemented by others) for locomotion were those such as gravitational force fields, a donkey lured by a carrot on a stick, or [yourself sitting on top of a person steered by pulling their "hairs" around](https://en.wikipedia.org/wiki/Ratatouille_(film)). From this I have decided to simply come up with ideas and refine them into something workable.
+I was encouraged to seek out _real life examples_ to draw inspirations from, including apps and games on the supplied headset. A lot of creative freedom was given to students. Among the ideas discussed (and later actually implemented by others) for locomotion were those such as [gravitational force fields](https://mosouka.github.io/Gravity/), [a donkey lured by a carrot on a stick](https://vr.rubenhussong.com/blog/carrot-and-stick/), or [yourself as a rat sitting on top of a person steered by pulling their "hairs" around](https://elifdogann.github.io/Rataouille_VRControl_Elif_Dogan/). From this I have decided to simply come up with ideas and refine them into something workable.
 
 ---
 
