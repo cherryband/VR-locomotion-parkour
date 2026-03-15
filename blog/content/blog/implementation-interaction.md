@@ -4,7 +4,7 @@ date = "2026-03-15T15:00:00+01:00"
 +++
 The reference interaction was simply "grabbing" the object with the side trigger and manipulating it directly. It seemed that I was able to use it unmodified...
 
-![Screenshot of far-away button](/a235df7b92db722768922fda9f608967.png)
+![Screenshot of far-away button](a235df7b92db722768922fda9f608967.png)
 
 ... if I was able to reach the start button.
 
@@ -37,12 +37,12 @@ This was exactly what I needed, since it fits in perfectly with my "preview chan
     <tr>
         <td>
             <video width=100% controls>
-                <source src="/a56369285992bb965f94e27c4052632e.mp4" type="video/mp4">
+                <source src="a56369285992bb965f94e27c4052632e.mp4" type="video/mp4">
             </video>
         </td>
        <td>
             <video width=100% controls>
-                <source src="/78cc13c21adb8fe45c80a96ea4a14e0d.mp4" type="video/mp4">
+                <source src="78cc13c21adb8fe45c80a96ea4a14e0d.mp4" type="video/mp4">
             </video>
        </td>
     </tr>

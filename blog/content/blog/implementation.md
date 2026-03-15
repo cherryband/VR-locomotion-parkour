@@ -14,7 +14,7 @@ Meta Quest SDK only works on Windows, which I was informed of during the class i
 
 Installing Windows itself is relatively easy (even though it requires [extra steps](https://pureinfotech.com/bypass-microsoft-account-setup-windows-11/) nowadays). The problem lied on the fact that my storage was using a [LUKS on LVM](https://wiki.archlinux.org/title/Dm-crypt/Encrypting_an_entire_system#LUKS_on_LVM) configuration. In my case, a LUKS-encrypted partition was span across 2 different SSDs using LVM, effectively creating a RAID 0 configuration.
 
-![diagram of the storage madness](/diagram4.png)
+![diagram of the storage madness](diagram4.png)
 
 A space to install Windows had to come from shrinking the LUKS on LVM partition taking up the entire storage. Resizing LUKS on LVM is as convoluted as the storage situation itself, shrinking it riskier than growing. It has to be done manually because almost all partition software tools don't understand this setup, and to this day I am unsure if I can perform it successfully. It has 3 separate failure points (the encryption, the LVM, the partition itself), so I wanted to avoid the procedure if at all possible.
 Worse, I did not have a lot of free space, which is why it was on effectively RAID 0 in the first place. So even if I had shrunk the Linux partition to install Windows, it wouldn't have been large enough to even install Unity.
