@@ -1,9 +1,7 @@
 ---
 title: "Implementation - Preparation"
 slug: implementation-preparation
-description: null
 date: 2026-03-15T13:00:00+01:00
-draft: true
 ---
 
 The implementation was split between 3 stages: one each for locomotion and interaction, and one for miscellaneous improvements/tidying up.

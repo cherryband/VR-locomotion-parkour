@@ -1,12 +1,10 @@
 ---
 title: "Introduction & Motivation"
 slug: intro-motivation
-description: null
 date: 2026-03-15T12:00:00+01:00
-draft: true
 ---
 
-## Introduction
+# Introduction
 
 
 As a part of the Interaction in Virtual and Augmented Reality(IARVR) I was tasked to create a parkour game in virtual reality with my own locomotion (moving around in the world) and interaction (interacting with virtual objects) methods. 
@@ -15,7 +13,7 @@ The project was done in Unity environment with Meta VR SDK (formerly Oculus VR),
 
 ---
 
-## Motivation
+# Motivation
 
 Although I was at first sceptical I would complete the class successfully due to unfamiliarity of the problem domain and relative lack of ideas compared to peers, the structure of the course has given me enough guidance and assurance.
 
@@ -23,9 +21,9 @@ I was encouraged to seek out _real life examples_ to draw inspirations from, inc
 
 ---
 
-## Problem statement & Solution
+# Problem statement & Solution
 
-### Locomotion
+## Locomotion
 
 I have wanted the locomotion to be based on physical motion, as I believed that is the most intuitive and direct way of moving around. The problem is **the mismatch of size between the virtual and physical world that you are allowed to move in.**
 
@@ -47,7 +45,7 @@ Another idea that I ended up pursuing was a combination of existing ideas. It de
 
 From this I have come up with a idea to let the world size controlled by the user. The physical distance covered will stay the same, but with a shrunken down world the user effectively gains speed. This idea also offered additional opportunities to 'gameify' the experience, e.g., requiring users to be a certain size to progress or complete certain tasks. The idea was presented and received positive feedback.
 
-### Interaction
+## Interaction
 
 Interaction was the harder part to come up with ideas. The problem was again the limited range of motion. To get around this I have decided initially to implement something called "World in Miniature": a secondary, miniature world that you can affect with, the changes of which is translated back into the main world. I think of it as essentially a dollhouse that's linked to "real" (in this case real-er) objects. The inspiration came from an application called "Theatre Elsewhere" which employed such a system for its UI.
 
@@ -57,18 +55,18 @@ Interaction was the harder part to come up with ideas. The problem was again the
 
 ---
 
-## Idea Developments
+# Idea Developments
 
 From feedback, implementation details and practical limitations the concept has evolved and was adapted throughout the course of the project.
 
-### Locomotion
+## Locomotion
 Oculus headset wants to stay within a constrained boundary; a boundary is either stationary (usually while seated) or drawn over fixed physical location. Within the boundary there should be no obstacles, meaning it is inconvenient to try to use the majority of the room as a boundary, as anything above ground must be cleared away.
 
 For my development I was able to designate a small area of around 2-3 square meters. Walking through the entire map, even with scaling, is inconvenient at this scale, so it required an alternative way of moving the player. 
 
 It has come down to 2 techniques: simulated walking, where the player moves their body up and down as if they are walking which translates into forward motion, or world grabbing, essentially pushing and pulling the environment towards or away from you. I have chosen world grabbing, as the grabbing action can also be used with scaling, thereby increasing familiarity.
 
-### Interaction
+## Interaction
 I was not truly happy with the idea of World in Miniature for this project as it felt disconnected to the locomotion method. There was no compelling reason I *should* manipulate an object through a miniature instead of directly, especially when I'm allowed to roam freely unbounded by the limits of physical space. In an effort to make it more interesting in the proposal I have suggested a mixture of miniature and direct interaction, to which I got a feedback that direct interaction is already a different form of interaction.
 
 Another problem was the reality of interacting with the miniature itself. For this project I have decided to exclusively support controller inputs, as its positioning is more accurate and it offers more types of inputs (hand tracking offers pinch detection, meanwhile each controller has a thumb stick, 3 buttons and 2 analogue triggers). **How 'miniature' can the miniature be if it's meant to be interacted with a controller that is the size of a palm?**

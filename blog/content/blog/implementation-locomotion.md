@@ -37,5 +37,4 @@ This worked only partially. The problem was that I am only getting the short ang
     <source src="/5c03344569260e10b05d53a3245239f9.mp4" type="video/mp4">
 </video>
 
-
 Notice that the effects such as halo and particles are not scaled so they look extremely large. You may also notice that the start button for the interaction task appears far away and had to be brought forward by scaling the world back up, which is where the next implementation starts.

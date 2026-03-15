@@ -2,7 +2,6 @@
 title: "Evaluation & Feedback"
 slug: evaluation
 date: 2026-03-15T17:00:00+01:00
-draft: true
 ---
 
 # Preliminary Feedback
@@ -58,4 +57,22 @@ Furthermore, I have realised I have not tested such a scenario, meaning there ca
     <source src="/VID-20260315-WA0003.mp4" type="video/mp4">
 </video>
 
-This scenario was not considered during the development, because... it was not a reasonable way to play. Player 1 has reported they had spent 5 minutes just to reach the 1st interaction area, meanwhile I had spent 4 minutes completing the *entire map* under the accuracy constraint (following all the rules). The scale at which they were moving in the screenshot reflected this: they had ample room to grow but they didn't, even when they knew how to scale. 
+This scenario was not considered during the development, because... it was not a reasonable way to play. Player 1 has reported they had spent 5 minutes just to reach the 1st interaction area, meanwhile I had spent 4 minutes completing the *entire map* under the accuracy constraint (following all the rules). The scale at which they were moving in the screenshot reflected this: they had ample room to grow but they didn't, even when they knew how to scale.
+
+---
+
+After this I was able to get 2 more participants who *did* finish their runs and was able to submit the questionnaire. The questionnaire results generally converge into neutral or positive experience, but not much meaningful results were observed. 
+
+The T-shape size question did lead to a finding: in the accuracy run, everybody selected "large and close together," while in the speed run only 1 out of 3 did. This means that when pressed for speed, users rather scale down less to preserve motion. This also means they are navigating the world in a small world for the majority of time, which was not the case for the above 2 people who didn't finish the map. In other words, they appear to have successfully learned the rules of the game.
+
+Considering the results it may have been better to do a one-on-one interview to find out what led to such differences in behaviour, but due to time constraints it wasn't possible.
+
+# Conclusion
+
+My main goal was to create a locomotion & interaction techniques that were physical in nature while not being bounded by spatial limitations. In that sense, the project was able to meet its goal. The assumptions leading up to it, however, seems to be incorrect.
+
+One of the principles I have used designing the mechanics was how intuitive it was, without concrete justification. It often is the case that as a creator you know your way around too much that there is a high barrier to entry. I have tried to mitigate that problem, but without **frequent, active involvement of others** this was not as effective. Reports from study participants reflect this: while they find the mechanic interesting and well balanced once they got to understand it, getting there seemed to be not as easy.
+
+It may have also been beneficial to **get technical assistance** early on. I prefer to figure something out by myself, but by thinking with others the issues I had with basic operation may have been resolved earlier.
+
+All in all, however, I started from not knowing anything about Unity, C#, and VR to being able to create a substantial work based on it. Even though the project was mostly modifying existing code, I rather see it as a blessing since it means I was able to focus on the business logic for the most part. The creative exercise of creating and refining an idea was also a part that I found helpful, since I started out with no prior experience in VR.

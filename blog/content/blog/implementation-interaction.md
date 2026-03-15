@@ -1,7 +1,6 @@
 +++
 title = "Implementation - Interaction"
 date = "2026-03-15T15:00:00+01:00"
-tags = []
 +++
 The reference interaction was simply "grabbing" the object with the side trigger and manipulating it directly. It seemed that I was able to use it unmodified...
 
