@@ -1,0 +1,42 @@
+---
+title: "Evaluation"
+slug: evaluation
+date: 2026-03-15T17:00:00+01:00
+draft: true
+---
+
+# Evaluation & Feedback
+
+## Preliminary Feedback
+During the final presentation there were short demo sessions where all of the course participants had a chance to play the game in their own headset. From this informal demo I was already able to get useful feedback:
+
+* The perspective of looking down on the mini parkour map was interesting and unique.
+* Having to constantly look down is fatiguing.
+* The movement feels restricted; People were frustrated that they were moving so slowly and wanted to move faster.
+
+While I shared some of the feedback, such as fatigue from having to look down, the feedback of feeling restricted came as a surprise to me. It seemed to indicate that I didn't communicate clearly enough that in order to speed up you needed to shrink the world down, or something else.
+
+With this helpful information I designed an experiment to confirm this hypothesis.
+
+## User Survey
+I needed to do a user survey on 3 people including myself. Since people seemed to have problems moving around, I have decided to design an experiment in such a way that I can gradually introduce them to the game mechanics. If I were given more time and scale this could have been a comparison study, but extrapolating results from 3 people are already limited in itself.
+
+The study was to be conducted as follows:
+
+1. The participant first plays the game following all the rules. This includes collecting all coins, minimizing property damages as much as possible, positioning themselves in the optimal scale, and performing the T-shape rotation task to the best of their ability. The time of this is recorded.
+2. The participant then completes a short survey over the experience.
+3. The participant plays the game again, and this time they are encouraged to ignore the rules and complete the map as fast as possible. The interaction tasks were not skipped but rather allowed for some errors. The time is recorded.
+4. The participant completes the same survey.
+
+The participants I was able to recruit were other students in the same course. They have participated in the study remotely using their own headsets.
+
+### Results
+Unfortunately the study has not worked out as planned, since both of the 2 people I recruited had failed to complete the map even once. Both of them have reported problems in locomotion. At first I expected a movement bug, specifically one that involves different kind of headset (students were randomly given a Quest 2/3/3S). But analysing the footage they have given me revealed that they were scaling too little, and staying too small. They were not gaining speed because **they were too small** relative to the world (which is how the game starts by design, to encourage scaling the world down).
+
+Furthermore, I have realised I have not tested such a scenario, meaning there can be edge cases where the user travells "too far off the map." Because it's the world scaling relative to the user and player moving, not using the scaling function means that the actual coordinates travelled by the player will be much larger, even if you end up at the "same place". Participant 1 has reported a bug where they could not progress to a different level even after finishing the task, and participant 2 reported what looked like a grey wall cutting off the world, indicating they might have somehow reached the far side of the render distance.
+
+<video width=60% autoplay loop muted>
+    <source src="/VID-20260315-WA0003.mp4" type="video/mp4">
+</video>
+
+This scenario was not considered during the development, because... it was not a reasonable way to play. Player 1 has reported they had spent 5 minutes just to reach the 1st interaction area, meanwhile I had spent 4 minutes completing the *entire map* under the accuracy constraint (following all the rules). The scale at which they were moving in the screenshot reflected this: they had ample room to grow but they didn't, even when they knew how to scale. 
