@@ -27,11 +27,11 @@ I was encouraged to seek out _real life examples_ to draw inspirations from, inc
 
 I have wanted the locomotion to be based on physical motion, as I believed that is the most intuitive and direct way of moving around. The problem is **the mismatch of size between the virtual and physical world that you are allowed to move in.**
 
-![First idea: roll the controller](diagram1.png)
+![First idea: roll the controller](../diagram1.png)
 
 In this context my initial idea was a metaphorical hamster ball, mapped to the rotation of the controller. This idea was not much explored, and, if I were to do this course again, the one I would like to attempt. Practical limitations I've immediately identified was that it is hard to spin a controller unbounded fast enough to move distances and it risked damaging it. If I were to pursue this in the future the best path would be to design a 3D-printable sphere with the inside cut out to encapsulate the controller, and solving the tracking issue arising from the occlusion of the controller would be the challenge.
 
-![Second idea: what if you just went](diagram2.png)
+![Second idea: what if you just went](../diagram2.png)
 
 Another locomotion technique I have envisioned was a concept of *restricted turning*. Due to my room layout I was restricted to mainly linear motion, back and forth. To be able to explore the world without indirect motion (e.g., via joystick), and to overcome the size mismatch problem, the idea was to decouple headset rotation from in-world rotation. The in-world rotation is dictated by where you are in it and how much rotation is necessary at that moment, eliminating the 2D component.
 
@@ -41,7 +41,7 @@ Aside from the foreseeable issue of motion sickness, and the awkwardness of bein
 
 Another idea that I ended up pursuing was a combination of existing ideas. It derived from the idea of increasing the speed of in-world movement in relation to the actual movement, essentially giving users a "superspeed". Due to motion sickness it was suggested that the world be shrinked down instead of increasing users' speed. This results in a relatively understandable way of locomotion that allows you to move faster than in real life.
 
-![Third idea: I'm not small, you are](diagram3.png)
+![Third idea: I'm not small, you are](../diagram3.png)
 
 From this I have come up with a idea to let the world size controlled by the user. The physical distance covered will stay the same, but with a shrunken down world the user effectively gains speed. This idea also offered additional opportunities to 'gameify' the experience, e.g., requiring users to be a certain size to progress or complete certain tasks. The idea was presented and received positive feedback.
 
@@ -50,7 +50,7 @@ From this I have come up with a idea to let the world size controlled by the use
 Interaction was the harder part to come up with ideas. The problem was again the limited range of motion. To get around this I have decided initially to implement something called "World in Miniature": a secondary, miniature world that you can affect with, the changes of which is translated back into the main world. I think of it as essentially a dollhouse that's linked to "real" (in this case real-er) objects. The inspiration came from an application called "Theatre Elsewhere" which employed such a system for its UI.
 
 <video width=60% autoplay loop muted>
-    <source src="277a464cd9d51a15ba191ba04e67b5ec.mp4" type="video/mp4">
+    <source src="../277a464cd9d51a15ba191ba04e67b5ec.mp4" type="video/mp4">
 </video>
 
 ---

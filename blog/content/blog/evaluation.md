@@ -54,7 +54,7 @@ Unfortunately the study has not worked out as planned, since both of the 2 peopl
 Furthermore, I have realised I have not tested such a scenario, meaning there can be edge cases where the user travells "too far off the map." Because it's the world scaling relative to the user and player moving, not using the scaling function means that the actual coordinates travelled by the player will be much larger, even if you end up at the "same place". Participant 1 has reported a bug where they could not progress to a different level even after finishing the task, and participant 2 reported what looked like a grey wall cutting off the world, indicating they might have somehow reached the far side of the render distance.
 
 <video width=60% autoplay loop muted>
-    <source src="VID-20260315-WA0003.mp4" type="video/mp4">
+    <source src="../VID-20260315-WA0003.mp4" type="video/mp4">
 </video>
 
 This scenario was not considered during the development, because... it was not a reasonable way to play. Player 1 has reported they had spent 5 minutes just to reach the 1st interaction area, meanwhile I had spent 4 minutes completing the *entire map* under the accuracy constraint (following all the rules). The scale at which they were moving in the screenshot reflected this: they had ample room to grow but they didn't, even when they knew how to scale.
