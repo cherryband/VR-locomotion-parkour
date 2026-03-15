@@ -32,4 +32,4 @@ And to make it challenging, the scale of each interaction task gets progressivel
 
 So far the game has been straightforward: Go where you need to go, and do the tasks. The reference parkour has a winding road. It would have been an obstacle when you're at the street level, but when you are so big that the building's barely bigger than your face, the shape of the road no longer matters. So it was kind of boring and too easy.
 
-The solution I came up with is to destroy them. The reference parkour already had collision system mapped out for buildings, which I was able to use. 
+The solution I came up with is to destroy them. The reference parkour already had collision system mapped out for buildings, which I was able to use. The rabbit had its own mesh collider, but for some reason it didn't work, so I applied a cube collider. All other elements, including the bushes which wasn't on the same layer as the buildings, and the giraffe, were had their collider enabled. Coin collector logic was repurposed to record the damaged properties and show them alongside other scores.

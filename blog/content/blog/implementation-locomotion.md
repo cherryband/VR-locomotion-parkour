@@ -8,6 +8,81 @@ The reference implementation already had its own implementation of the movement.
 
 It took me a couple of tries to land on a working prototype, but it came relatively quickly. The architecture I've landed on here became the blueprint for basically every other aspect of control method in this project.
 
+<details>
+  <summary>Detailed description of the mechanism</summary>
+  1. A global variable of the state is kept (e.g., `scaleOffset`, `startPosition`, ...). This variable is only updated *after* the adjustment, when the user lets go of the control.
+
+```csharp
+public class LocomotionTechnique : MonoBehaviour
+{
+    [SerializeField] private Vector3 startPosition;
+    [SerializeField] private float scaleOffset = 1f;
+    (...)
+}
+```
+
+  2. When the user presses the trigger, a boolean such as `isIndexTriggerDown` flips state. The initial state of the controller (position, rotation, etc.) is taken while doing so.
+
+```csharp
+void Update()
+{
+    if (leftTriggerValue > 0.95f && rightTriggerValue > 0.95f)
+    {
+        Vector3 pos1 = OVRInput.GetLocalControllerPosition(leftController);
+        Vector3 pos2 = OVRInput.GetLocalControllerPosition(rightController);
+        if (!isIndexTriggerDown)
+        {
+            isIndexTriggerDown = true;
+            startPos1 = pos1;
+            startPos2 = pos2;
+        }
+    }
+    (...)
+}
+```
+
+  3. A delta variable tracks the difference between the current state and the state recorded in step 2.
+
+```csharp
+if (leftTriggerValue > 0.95f && rightTriggerValue > 0.95f)
+{
+    (...)
+    scaleDelta = (pos1 - pos2).magnitude - (startPos1 - startPos2).magnitude;
+    positionOffset = (startPos1 - pos1) + (startPos2 - pos2);
+}
+```
+
+  4. When user lets go of the trigger, state variables are updated and delta variables are zeroed.
+  
+```csharp
+(...)
+else if (leftTriggerValue < 0.95f && rightTriggerValue < 0.95f)
+{
+    if (isIndexTriggerDown)
+    {
+        isIndexTriggerDown = false;
+        scaleOffset *= 1 + scaleDelta*scaleGain;
+        startPosition += positionOffset*translationGain/scaleOffset;
+    }
+    positionOffset = Vector3.zero;
+}
+```
+
+  5. Position and other transformations of GameObjects are updated every time, independent of user input. This is enabled by the decoupling of previous state and current ongoing modification. The calculations here are the same as what happens in step 4.
+
+```csharp
+void Update()
+{
+    (...)
+    float curScale = scaleOffset * (1 + scaleDelta*scaleGain);
+    if (curScale < 0.01f) curScale = 0.01f;
+    transform.position = startPosition*curScale + positionOffset*translationGain;
+}
+```
+
+  (`curScale` need to be applied to the previous position as it depends on the world scale and world scale also depends on input.)
+</details>
+
 # Implementing Scaling
 With the basic structure out of the way, the challenge was experimenting with how to incorporate the differential. For  It needed to work across a range of different scales, meaning it had to work intuitively, for example, across 0.1x, 1x, or 10x scale. It has to be noted that `scaleDelta` is a *percentage difference* of distance between the controllers. This means the value will be close to 0 most of the time, and it can be negative as well as positive.
 
