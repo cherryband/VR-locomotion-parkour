@@ -63,7 +63,7 @@ This scenario was not considered during the development, because... it was not a
 
 After this I was able to get 2 more participants who *did* finish their runs and was able to submit the questionnaire. The questionnaire results generally converge into neutral or positive experience, but not much meaningful results were observed. 
 
-The T-shape size question did lead to a finding: in the accuracy run, everybody selected "large and close together," while in the speed run only 1 out of 3 did. This means that when pressed for speed, users rather scale down less to preserve motion. This also means they are navigating the world in a small world for the majority of time, which was not the case for the above 2 people who didn't finish the map. In other words, they appear to have successfully learned the rules of the game.
+The T-shape size question did lead to a finding: in the accuracy run, everybody selected "large and close together," while in the speed run only 1 out of 3 did. This means that when pressed for speed, users rather scale down less to preserve motion. This also means they are navigating a scaled-down world for the majority of time, which was not the case for the above 2 people who couldn't finish the map. In other words, they appear to have successfully learned the rules of the game.
 
 Considering the results it may have been better to do a one-on-one interview to find out what led to such differences in behaviour, but due to time constraints it wasn't possible.
 
