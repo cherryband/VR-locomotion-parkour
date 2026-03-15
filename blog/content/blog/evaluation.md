@@ -1,13 +1,11 @@
 ---
-title: "Evaluation"
+title: "Evaluation & Feedback"
 slug: evaluation
 date: 2026-03-15T17:00:00+01:00
 draft: true
 ---
 
-# Evaluation & Feedback
-
-## Preliminary Feedback
+# Preliminary Feedback
 During the final presentation there were short demo sessions where all of the course participants had a chance to play the game in their own headset. From this informal demo I was already able to get useful feedback:
 
 * The perspective of looking down on the mini parkour map was interesting and unique.
@@ -18,7 +16,7 @@ While I shared some of the feedback, such as fatigue from having to look down, t
 
 With this helpful information I designed an experiment to confirm this hypothesis.
 
-## User Survey
+# User Survey
 I needed to do a user survey on 3 people including myself. Since people seemed to have problems moving around, I have decided to design an experiment in such a way that I can gradually introduce them to the game mechanics. If I were given more time and scale this could have been a comparison study, but extrapolating results from 3 people are already limited in itself.
 
 The study was to be conducted as follows:
@@ -28,9 +26,30 @@ The study was to be conducted as follows:
 3. The participant plays the game again, and this time they are encouraged to ignore the rules and complete the map as fast as possible. The interaction tasks were not skipped but rather allowed for some errors. The time is recorded.
 4. The participant completes the same survey.
 
-The participants I was able to recruit were other students in the same course. They have participated in the study remotely using their own headsets.
+<details>
+  <summary>Survey Questions</summary>
 
-### Results
+All questions (except Interaction-1 and the last open-end question) use 5-point Likert Scale.
+
+* Locomotion
+    1. I was able to move around and scale accurately.
+    1. I was able to move around and scale quickly.
+    1. I was able to move around without physical fatigue or uncomfortable postures.
+* Interaction
+    1. The size of T-shapes during the interaction tasks were in general...
+        * small and far apart
+        * large and close together
+    1. I was able to move and rotate the object accurately.
+    1. I was able to move and rotate the object quickly.
+    1. I was able to move and rotate the object without physical fatigue or uncomfortable postures.
+* If you can change one thing about the game, what will it be? (optional open-end question)
+
+The intention of Interaction-1 was to confirm, generally, that the user has played the interaction part using the correct scale. "Small and far apart" can indicate that the world is too small.
+</details>
+
+The participants I was able to recruit were other students in the same course, meaning they had prior VR experience. They have participated in the study remotely using their own headsets.
+
+## Results
 Unfortunately the study has not worked out as planned, since both of the 2 people I recruited had failed to complete the map even once. Both of them have reported problems in locomotion. At first I expected a movement bug, specifically one that involves different kind of headset (students were randomly given a Quest 2/3/3S). But analysing the footage they have given me revealed that they were scaling too little, and staying too small. They were not gaining speed because **they were too small** relative to the world (which is how the game starts by design, to encourage scaling the world down).
 
 Furthermore, I have realised I have not tested such a scenario, meaning there can be edge cases where the user travells "too far off the map." Because it's the world scaling relative to the user and player moving, not using the scaling function means that the actual coordinates travelled by the player will be much larger, even if you end up at the "same place". Participant 1 has reported a bug where they could not progress to a different level even after finishing the task, and participant 2 reported what looked like a grey wall cutting off the world, indicating they might have somehow reached the far side of the render distance.

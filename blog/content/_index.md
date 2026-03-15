@@ -8,5 +8,7 @@ weight = 100
 In the game you play as a rabbit that can grow or shrink the world around it. Use the main trigger of both controllers to move and grow/shrink. Use the grab trigger to move and rotate T-shaped objects.
 
 
+<div style="padding-bottom: 56.25%; position: relative;"><iframe style="position: absolute; top: 0px; left: 0px; width: 100%; height: 100%;" width="100%" height="100%" src="https://www.youtube.com/embed/e1cSkzj621s" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture; fullscreen" ></iframe></div>
+
 
 This blog serves as a documentation of the development history & a showcase of the result. Click [here](https://github.com/cherryband/VR-locomotion-parkour) to see the source code, or click on the [Blog](blog) to see the devlog.
